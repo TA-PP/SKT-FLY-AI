@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container"></div>
+    <p>로그인</p>
+    <form method="post" action="/login">      {# post 통신을 위한 택배 박스 같은 것 #}    
+        {# 아이디 입력하는 칸 #} 
+        <div class="input-group mb-3">
+            <sapn class="input-group-text">아이디</sapn>
+            <input type="text" class="form-control" name="userid" value=""/>
+        </div>
+        {# 비밀번호 입력하는 칸 #}    
+        <div class="input-group mb-3">
+            <sapn class="input-group-text">비밀번호</sapn>
+            <input type="password" class="form-control" name="userpw" value="" />
+        </div>
+        {# 로그인 버튼 #}
+        <div class="d-grid gap-2">
+            <button type="submit" class="btn btn-primary">로그인</button>
+        </div>
+        {# 회원가입 버튼 #}
+        <div class="d-grid gap-1">
+            <p>&nbsp</p>
+            <a href="/join" type="button" class="btn btn-outline-success">회원가입</a>
+        </div>
+        {% if alertMsg %}
+        <div class="d-grid gap-2">
+            <p>&nbsp</p>
+            <div class="alert alert-danger" role="alert">
+                {{alertMsg}}
+                </div>
+        </div>
+        {% endif %}
+        {% if join == 'y' %}
+        <div class="d-grid gap-2">
+            <p>&nbsp</p>
+            <div class="alert alert-success" role="alert">
+                '회원가입이 완료되었습니다'
+                </div>
+        </div>
+        {% endif %}
+    </form>
+</div>
+{% endblock %}
