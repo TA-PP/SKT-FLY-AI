@@ -144,3 +144,7 @@ update mem set
 # Delete 문
 delete from mem where 조건;
 아이디 abc인 사람 삭제
+
+# DB injection 공격
+select name from mem where userid = 'winincow' and userpw = '암호';
+';delete * from mem;'

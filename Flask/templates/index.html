@@ -1,12 +1,12 @@
-{% extends "base.html" %}
+{% extends "base.html" %} {% block content %}
+<p>로그인 하기</p>
 
-{% block content %}
-    <p>네이버 이동하기</p>
-    <a href="/login" target="_blank">LOGIN</a>
-    이동
-    <br />
-    <br />
-    <img src="/static/dog.jpg" width="600"/>
-{% endblock %}
-        
-
+{% if ss_name %}
+<h2>{{ss_name}}님 반갑습니다.</h2>
+{% if ss_img %}
+<p><img src="/static/{{ss_img}}" width="300" /></p>
+{% endif %}
+<a href="/logout" target="_blank">LOGOUT</a>
+{% else %}
+<a href="/login" target="_blank">LOGIN</a>
+{% endif %} {% endblock %}
