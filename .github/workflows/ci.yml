@@ -5,9 +5,9 @@ name: Python application
 
 on:
   push:
-    branches: [ python-ci-workflow ]
+    branches: [ main ]
   pull_request:
-    branches: [ python-ci-workflow ]
+    branches: [ main ]
 
 jobs:
   build:
@@ -15,8 +15,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Set up Python
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v3
       with:
-        python-version: "3.0"
+        python-version: "3.8"
     - name: Display Python version
       run: python -c "import sys; print(sys.version)"
