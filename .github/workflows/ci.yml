@@ -16,6 +16,6 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: "3.8"
+        python-version: "3.0"
     - name: Display Python version
       run: python -c "import sys; print(sys.version)"
